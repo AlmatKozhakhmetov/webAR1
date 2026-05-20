@@ -3,30 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>���� AR</title>
+    <title>Презентация ГРПШ в AR</title>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
     <style>
         body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; font-family: sans-serif; }
-        model-viewer { width: 100%; height: 100%; background-color: #f0f0f0; }
+        model-viewer { width: 100%; height: 100%; background: #f8f9fa; }
         .ar-button {
-            position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
-            padding: 14px 28px; background-color: #007bff; color: white;
-            border: none; border-radius: 30px; font-size: 16px; font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3); cursor: pointer; z-index: 999;
+            position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+            padding: 16px 32px; background: #28a745; color: white;
+            border: none; border-radius: 50px; font-size: 16px; font-weight: bold;
+            box-shadow: 0 4px 15px rgba(40,167,69,0.4); cursor: pointer; z-index: 999;
+        }
+        .hint {
+            position: absolute; top: 15px; width: 100%; text-align: center;
+            color: #555; font-size: 14px; z-index: 998;
         }
     </style>
 </head>
 <body>
 
+    <div class="hint">Пальцем можно крутить и масштабировать ГРПШ</div>
+
     <model-viewer src="model.glb"
                   ar
-                  ar-modes="webxr scene-viewer quick-look"
+                  ar-modes="scene-viewer quick-look webxr"
                   camera-controls
                   auto-rotate
-                  shadow-intensity="1"
-                  alt="3D ������ ����">
+                  ar-scale="fixed" 
+                  shadow-intensity="1.5"
+                  alt="3D модель ГРПШ">
         
-        <button slot="ar-button" class="ar-button">���������� � AR (�� �������)</button>
+        <button slot="ar-button" class="ar-button">🚀 ЗАПУСТИТЬ AR НА ОБЪЕКТЕ</button>
         
     </model-viewer>
 
